@@ -96,6 +96,7 @@
 <main class="summary">
    
 </main>
+<script src="configuration.js"></script>
 <script>
     // Retrieve the selected beverage and condiments from localStorage
     var beverage = localStorage.getItem('selectedBeverage');
@@ -108,10 +109,11 @@ var orderData = {
 };
     console.log(JSON.stringify(orderData)); 
     // Post the order data to the server
-    fetch('https://coffee-order-dc08.onrender.com/orders', {
+    fetch(getHost()+"/orders", {
     method: 'POST',
     headers: {
         'Content-Type': 'application/json',
+        'Authorization': `Bearer ${configuration.token()}`
     },
     body: JSON.stringify(orderData),
 })
@@ -119,6 +121,7 @@ var orderData = {
     if (!response.ok) {
         // If the response is not OK and not JSON, get the text of the response
         return response.text().then(text => { throw new Error(text) });
+        
     }
     return response.json();
 })

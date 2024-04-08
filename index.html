@@ -60,13 +60,22 @@
 
 <div id="container">
     <button id="startOrderButton">Start your order here</button>
+    <button id="loginbutton">Login</button>
 </div>
 
+
+
+
+<div id="orderStatus">Order Status</div>
 <div id="orderStatus">Order Status</div>
 
 <script>
 document.getElementById("startOrderButton").onclick = function () {
     window.location.href = "beverage.html"; // Replace with the actual URL for starting the order
+};
+
+document.getElementById("loginbutton").onclick = function () {
+    window.location.href = "login.html"; // Replace with the actual URL for starting the order
 };
 
 document.getElementById("orderStatus").onclick = function () {
