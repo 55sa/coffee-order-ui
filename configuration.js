@@ -1,7 +1,7 @@
 const host=1;
 
-const host_local="http://localhost:8868";
-const host_remote="https://coffee2-2du0.onrender.com";
+const host_local="http://localhost:3095";
+const host_remote="https://coffee3.onrender.com";
 
 function getHost(){
     return(host==0)? host_local : host_remote;
